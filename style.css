@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header h1 {
+    text-align: center;
+    padding: 1rem;
+    font-size: 3.2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin: 0 2rem;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.icons::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: lightgray;
+    position: absolute;
+    bottom: 0;
+}
+
+.icons .set {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon {
+    font-size: 2rem;
+    padding: 1rem;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.icon:hover,
+.active {
+    background-color: lightgray;
+}
+
+textarea {
+    width: 100%;
+    height: 30rem;
+    padding: 2rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: none;
+}
