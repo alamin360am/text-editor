@@ -58,10 +58,17 @@ alignJustifyButton.addEventListener('click', function(){
 });
 
 copyButton.addEventListener('click', function(){
-    handler('italic', 'italic');
+    const text = document.getElementById('text');
+    text.select();
+    text.setSelectionRange(0, 99999); // For mobile
+    navigator.clipboard.writeText(text.value);
+    copyButton.classList.remove('fa-copy');
+    copyButton.classList.add('fa-check');
 });
 
 resetButton.addEventListener('click', function(){
     const text = document.getElementById('text');
     text.value = '';
+    copyButton.classList.remove('fa-check');
+    copyButton.classList.add('fa-copy');
 });
