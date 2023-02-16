@@ -7,6 +7,8 @@ const alignRightButton = document.getElementById('align-right');
 const alignJustifyButton = document.getElementById('align-justify');
 const copyButton = document.getElementById('copy');
 const resetButton = document.getElementById('reset');
+const fontSize = document.getElementById('font-size');
+const color = document.getElementById('color');
 
 // Common Function
 
@@ -24,6 +26,9 @@ function removeClass(element1, element2, element3) {
     document.getElementById(element2).classList.remove('active');
     document.getElementById(element3).classList.remove('active');
 }
+
+const text = document.getElementById('text');
+text.style.fontSize = fontSize;
 
 boldButton.addEventListener('click', function(){
     handler('bold', 'bold');
@@ -68,7 +73,27 @@ copyButton.addEventListener('click', function(){
 
 resetButton.addEventListener('click', function(){
     const text = document.getElementById('text');
+    const font = document.getElementById('font-size');
+    color.value = '#000';
+    font.value = 16;
     text.value = '';
+    text.style.color = '#000';
+    removeClass('bold', 'italic', 'align-left');
+    removeClass('align-right', 'align-center', 'align-justify');
+    removeClass('underline');
     copyButton.classList.remove('fa-check');
     copyButton.classList.add('fa-copy');
+    text.style.fontSize = '16px';
+});
+
+fontSize.addEventListener('input', function(){
+    const font = document.getElementById('font-size').value;
+    const text = document.getElementById('text');
+    text.style.fontSize = font+'px';
+});
+
+color.addEventListener('input', function(){
+    const colorValue = color.value;
+    const text = document.getElementById('text');
+    text.style.color = colorValue;
 });
