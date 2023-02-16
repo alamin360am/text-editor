@@ -80,7 +80,7 @@ resetButton.addEventListener('click', function(){
     text.style.color = '#000';
     removeClass('bold', 'italic', 'align-left');
     removeClass('align-right', 'align-center', 'align-justify');
-    removeClass('underline');
+    removeClass('underline', 'align-right', 'bold');
     copyButton.classList.remove('fa-check');
     copyButton.classList.add('fa-copy');
     text.style.fontSize = '16px';
